@@ -1,5 +1,5 @@
 ﻿using DataAccessLayer.DbConnection;
-using EntitiLayer;
+using EntitiLayer.Entities;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,6 @@ namespace DataAccessLayer.Repositories
             _dbConnection = new SqlDataAccess();
         }
 
-        //CREATE PRODUCT
         public void AddProduct(Productos producto)
         {
             using (var connection = _dbConnection.GetConnection())
@@ -40,7 +39,6 @@ namespace DataAccessLayer.Repositories
                 command.ExecuteNonQuery();  
             }
         }
-
 
         public DataTable GetProducts()
         {
@@ -68,7 +66,6 @@ namespace DataAccessLayer.Repositories
             return productsTable;
         }
 
-        //UPDATE PRODUCT
         public void UpdateProduct(Productos producto)
         {
             using (var connection = _dbConnection.GetConnection())
@@ -94,8 +91,6 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        //DELETE PRODUCT
-
         public void DeleteProduct(int id)
         {
             using (var connection = _dbConnection.GetConnection())
@@ -109,8 +104,5 @@ namespace DataAccessLayer.Repositories
                 command.ExecuteNonQuery();
             }
         }
-
-        
     }
-
 }

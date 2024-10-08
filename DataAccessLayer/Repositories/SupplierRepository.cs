@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.DbConnection;
-using EntitiLayer;
+using EntitiLayer.Entities;
 using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
 
@@ -17,7 +17,7 @@ namespace DataAccessLayer
       public SupplierRepository() { 
         _dbConnection = new SqlDataAccess();
       }
-        //CREATE
+
         public void CreateSupplier(Proveedores proveedores)
         {
             using (var connection = _dbConnection.GetConnection())
@@ -36,7 +36,6 @@ namespace DataAccessLayer
             }
         }
 
-        //READ 
         public DataTable GetSupplier()
         {
             DataTable suppliersTable = new DataTable();
@@ -55,7 +54,6 @@ namespace DataAccessLayer
             return suppliersTable;
         }
 
-        //UPDATE
         public void UpdateSupplier(Proveedores proveedores)
         {
             using (var connection = _dbConnection.GetConnection())
@@ -75,7 +73,6 @@ namespace DataAccessLayer
             }
         }
 
-        //DELETE
         public void DeleteSupplier(int id)
         {
             using (var connection = _dbConnection.GetConnection())

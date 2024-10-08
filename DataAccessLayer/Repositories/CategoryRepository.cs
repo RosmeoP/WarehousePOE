@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.DbConnection;
-using EntitiLayer;
+using EntitiLayer.Entities;
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
 
@@ -21,7 +21,6 @@ namespace DataAccessLayer.Repositories
         
         }
 
-        //CREATE
         public void CreateCategory(Categorias categorias)
         {
             using (var connection = _dbConnection.GetConnection())
@@ -38,7 +37,6 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        //READ
         public DataTable GetCategories()
         {
 
@@ -58,7 +56,6 @@ namespace DataAccessLayer.Repositories
             return categoriesTable;
         }
 
-        //UPDATE
         public void UpdateCategory(Categorias categorias)
         {
             using (var connection = _dbConnection.GetConnection())
@@ -73,8 +70,6 @@ namespace DataAccessLayer.Repositories
                 command.ExecuteNonQuery();
             }
         }
-
-        //DELETE
 
         public void DeleteCategory(int id)
         {
