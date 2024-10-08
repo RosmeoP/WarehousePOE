@@ -28,12 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "MainForm";
+            titleLabel = new Label();
+            clienteButton = new FontAwesome.Sharp.IconButton();
+            adminButton = new FontAwesome.Sharp.IconButton();
+            clienteLabel = new Label();
+            adminLabel = new Label();
+            SuspendLayout();
+            // 
+            // titleLabel
+            // 
+            titleLabel.AutoSize = true;
+            titleLabel.Font = new Font("Arial", 50F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            titleLabel.Location = new Point(143, 73);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new Size(518, 78);
+            titleLabel.TabIndex = 0;
+            titleLabel.Text = "Ingresar como:";
+            // 
+            // clienteButton
+            // 
+            clienteButton.FlatAppearance.BorderSize = 0;
+            clienteButton.FlatStyle = FlatStyle.Flat;
+            clienteButton.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
+            clienteButton.IconColor = Color.Black;
+            clienteButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            clienteButton.IconSize = 100;
+            clienteButton.Location = new Point(219, 253);
+            clienteButton.Name = "clienteButton";
+            clienteButton.Size = new Size(106, 81);
+            clienteButton.TabIndex = 1;
+            clienteButton.UseVisualStyleBackColor = true;
+            clienteButton.Click += clienteButton_Click;
+            // 
+            // adminButton
+            // 
+            adminButton.FlatAppearance.BorderSize = 0;
+            adminButton.FlatStyle = FlatStyle.Flat;
+            adminButton.IconChar = FontAwesome.Sharp.IconChar.UserGear;
+            adminButton.IconColor = Color.Black;
+            adminButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            adminButton.IconSize = 100;
+            adminButton.Location = new Point(484, 253);
+            adminButton.Name = "adminButton";
+            adminButton.Size = new Size(106, 81);
+            adminButton.TabIndex = 2;
+            adminButton.UseVisualStyleBackColor = true;
+            adminButton.Click += adminButton_Click;
+            // 
+            // clienteLabel
+            // 
+            clienteLabel.AutoSize = true;
+            clienteLabel.Font = new Font("Arial", 35F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            clienteLabel.Location = new Point(180, 351);
+            clienteLabel.Name = "clienteLabel";
+            clienteLabel.Size = new Size(181, 55);
+            clienteLabel.TabIndex = 3;
+            clienteLabel.Text = "Cliente";
+            // 
+            // adminLabel
+            // 
+            adminLabel.AutoSize = true;
+            adminLabel.Font = new Font("Arial", 35F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            adminLabel.Location = new Point(450, 351);
+            adminLabel.Name = "adminLabel";
+            adminLabel.Size = new Size(170, 55);
+            adminLabel.TabIndex = 4;
+            adminLabel.Text = "Admin";
+            // 
+            // MainForm
+            // 
+            AutoScaleMode = AutoScaleMode.None;
+            BackColor = Color.Wheat;
+            ClientSize = new Size(816, 489);
+            Controls.Add(adminLabel);
+            Controls.Add(clienteLabel);
+            Controls.Add(adminButton);
+            Controls.Add(clienteButton);
+            Controls.Add(titleLabel);
+            Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "MainForm";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label titleLabel;
+        private FontAwesome.Sharp.IconButton clienteButton;
+        private FontAwesome.Sharp.IconButton adminButton;
+        private Label clienteLabel;
+        private Label adminLabel;
     }
 }

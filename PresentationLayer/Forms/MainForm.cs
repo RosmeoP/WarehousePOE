@@ -16,5 +16,17 @@ namespace PresentationLayer.Forms
         {
             InitializeComponent();
         }
+
+        private void clienteButton_Click(object sender, EventArgs e)
+        {
+            ClienteForm clienteForm = new ClienteForm();
+            clienteForm.ShowDialog();
+        }
+
+        private void adminButton_Click(object sender, EventArgs e)
+        {
+            AdminForm adminForm = new AdminForm();
+            adminForm.ShowDialog();
+        }
     }
 }

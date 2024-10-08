@@ -9,7 +9,7 @@ using EntitiLayer.Entities;
 
 namespace BusinessLayer.Services
 {
-    internal class ProveedoresService
+    public class ProveedoresService
     {
         private SupplierRepository _supplierRepository;
 
