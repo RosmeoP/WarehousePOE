@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
+    <ProjectReference Include="..\EntitiLayer\EntitiLayer.csproj" />
   </ItemGroup>
 
 </Project>
