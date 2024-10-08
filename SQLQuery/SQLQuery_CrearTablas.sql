@@ -4,7 +4,7 @@ GO
 USE almacenDB
 GO
 
--- tabla de categorías
+-- tabla de categorÃ­as
 CREATE TABLE Categorias (
     Id INT PRIMARY KEY IDENTITY(1,1),
     Nombre NVARCHAR(100) NOT NULL
@@ -26,7 +26,7 @@ CREATE TABLE Productos (
 	Stock DECIMAL NOT NULL,
     IdCategoria INT,
 	NombreCategoria INT,
-    IdProveedor NVARCHAR,
+    IdProveedor INT,
 	NombreProveedor NVARCHAR,
     FOREIGN KEY (IdCategoria) REFERENCES Categorias(Id),
     FOREIGN KEY (IdProveedor) REFERENCES Proveedores(Id)
