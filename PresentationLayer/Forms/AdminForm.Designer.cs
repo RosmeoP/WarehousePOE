@@ -198,6 +198,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.Wheat;
+            CancelButton = exitAdminButton;
             ClientSize = new Size(800, 650);
             Controls.Add(exitAdminButton);
             Controls.Add(editarProveedorIconButton);
