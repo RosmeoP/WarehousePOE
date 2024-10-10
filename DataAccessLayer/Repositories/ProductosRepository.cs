@@ -32,8 +32,8 @@ namespace DataAccessLayer.Repositories
                 command.Parameters.AddWithValue("@Nombre", producto.Nombre);
                 command.Parameters.AddWithValue("@Precio", producto.Precio);
                 command.Parameters.AddWithValue("@Stock", producto.Stock);
-                command.Parameters.AddWithValue("@IdCategoria", producto.CategoryId);
-                command.Parameters.AddWithValue("@IdProveedor", producto.SupplierId);
+                command.Parameters.AddWithValue("@IdCategoria", producto.CategoriaId);
+                command.Parameters.AddWithValue("@IdProveedor", producto.ProveedorId);
 
                 connection.Open();
                 command.ExecuteNonQuery();  
@@ -42,7 +42,7 @@ namespace DataAccessLayer.Repositories
 
         public DataTable GetProducts()
         {
-            DataTable productsTable = new DataTable();
+            DataTable productoTable = new DataTable();
 
             using (var connection = _dbConnection.GetConnection())
             {
@@ -63,10 +63,10 @@ namespace DataAccessLayer.Repositories
                 connection.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
-                productsTable.Load(reader);
+                productoTable.Load(reader);
             }
 
-            return productsTable;
+            return productoTable;
         }
 
         public void UpdateProduct(Productos producto)
@@ -85,8 +85,8 @@ namespace DataAccessLayer.Repositories
                 command.Parameters.AddWithValue("@Nombre", producto.Nombre);
                 command.Parameters.AddWithValue("@Precio", producto.Precio);
                 command.Parameters.AddWithValue("@Stock", producto.Stock);
-                command.Parameters.AddWithValue("@IdCategoria", producto.CategoryId);
-                command.Parameters.AddWithValue("@IdProveedor", producto.SupplierId);
+                command.Parameters.AddWithValue("@IdCategoria", producto.CategoriaId);
+                command.Parameters.AddWithValue("@IdProveedor", producto.ProveedorId);
                 command.Parameters.AddWithValue("@Id", producto.Id);
 
                 connection.Open();

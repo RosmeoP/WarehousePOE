@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Forms\img\" />
+    <Compile Remove="Forms\img\**" />
+    <EmbeddedResource Remove="Forms\img\**" />
+    <None Remove="Forms\img\**" />
   </ItemGroup>
 
   <ItemGroup>

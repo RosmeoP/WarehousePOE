@@ -11,22 +11,35 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationLayer.Forms
-{
+{ 
     public partial class AdminForm : Form
     {
-        private SupplierRepository _supplierRepo;
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            int grosorBorde = 4;
+            Color colorBorde = Color.Gray;
+
+            ControlPaint.DrawBorder(e.Graphics, this.ClientRectangle,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid
+            );
+        }
+        private ProveedorRepository _supplierRepo;
         bool isEditing = false;
         public AdminForm()
         {
             InitializeComponent();
-            _supplierRepo = new SupplierRepository();
+            _supplierRepo = new ProveedorRepository();
 
             LoadSuppliers();
         }
 
         private void LoadSuppliers()
         {
-            DataTable suppliersTable = _supplierRepo.GetSupplier();
+            DataTable suppliersTable = _supplierRepo.GetProveedor();
             ProveedorDataGridView.DataSource = suppliersTable;
         }
 
@@ -48,24 +61,33 @@ namespace PresentationLayer.Forms
                     Telefono = telefonoTextBox.Text
                 };
 
-                _supplierRepo.UpdateSupplier(newSupplier);
+                _supplierRepo.UpdateProveedor(newSupplier);
                 isEditing = false;
                 LoadSuppliers();
                 MessageBox.Show("Proveedor actualizado correctamente", "Proveedor actualizado");
             }
             else
             {
-                var newSupplier = new Proveedores
+                try
                 {
-                    Nombre = nombreProveedorTextBox.Text,
-                    Direccion = direccionTextBox.Text,
-                    Telefono = telefonoTextBox.Text
-                };
+                    var newProveedor = new Proveedores
+                    {
+                        Nombre = nombreProveedorTextBox.Text,
+                        Direccion = direccionTextBox.Text,
+                        Telefono = telefonoTextBox.Text
+                    };
 
-                _supplierRepo.CreateSupplier(newSupplier);
-                isEditing = false;
-                LoadSuppliers();
-                MessageBox.Show("Proveedor guardado correctamente", "Proveedor guardado");
+                    _supplierRepo.CreateProveedor(newProveedor);
+                    isEditing = false;
+                    LoadSuppliers();
+                    MessageBox.Show("Proveedor guardado correctamente", "Proveedor guardado");
+                }
+                catch
+                {
+                    MessageBox.Show("Solo se admiten alores valido", "Error");
+                    return;
+                }
+                
             }
             CleanForm();
         }
@@ -108,13 +130,11 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("Por favor, seleccione un proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            //DataGridViewRow selectedRow = ProveedorDataGridView.SelectedRows[0];
             int id = int.Parse(ProveedorDataGridView.CurrentRow.Cells[0].Value.ToString());
 
             try
             {
-                _supplierRepo.DeleteSupplier(id);
+                _supplierRepo.DeleteProveedor(id);
                 MessageBox.Show("Proveedor eliminado correctamente", "Proveedor eliminado");
             }
             catch
@@ -122,7 +142,6 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("Este proveedor ya tiene productos distribuidos, no puede ser eliminido", "Error");
             }
             LoadSuppliers();
-            //MessageBox.Show($"{id}", "Proveedor eliminado");
         }
 
         private void exitAdminButton_Click(object sender, EventArgs e)

@@ -14,15 +14,28 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Forms
 {
-    public partial class ClienteForm : Form
+    public partial class EmpleadoForm : Form
     {
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            int grosorBorde = 4;
+            Color colorBorde = Color.Gray;
+
+            ControlPaint.DrawBorder(e.Graphics, this.ClientRectangle,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid
+            );
+        }
         private ProductosService _productoService;
         private ProveedoresService _proveedorService;
         private CategoriasService _categoriasService;
 
         bool isEditing = false;
 
-        public ClienteForm()
+        public EmpleadoForm()
         {
 
             InitializeComponent();
@@ -38,11 +51,11 @@ namespace PresentationLayer.Forms
 
         private void LoadProveedores()
         {
-            DataTable proveedores = _proveedorService.GetSupplier();
+            DataTable proveedores = _proveedorService.GetProveedor();
             proveedorComboBox.DataSource = proveedores;
             proveedorComboBox.DisplayMember = "Nombre";
             proveedorComboBox.ValueMember = "Id";
-            proveedorComboBox.SelectedIndex = -1; // Ninguna selección inicial
+            proveedorComboBox.SelectedIndex = -1; 
         }
         private void LoadCategorias()
         {
@@ -50,7 +63,7 @@ namespace PresentationLayer.Forms
             categoriaComboBox.DataSource = categorias;
             categoriaComboBox.DisplayMember = "Nombre";
             categoriaComboBox.ValueMember = "Id";
-            categoriaComboBox.SelectedValue = -1; // Ninguna selección inicial
+            categoriaComboBox.SelectedValue = -1; 
         }
 
 
@@ -81,8 +94,8 @@ namespace PresentationLayer.Forms
                     Nombre = nombreProductoTextBox.Text,
                     Precio = Convert.ToDecimal(precioTextBox.Text),
                     Stock = Convert.ToInt32(stockTextBox.Text),
-                    CategoryId = Convert.ToInt32(categoriaComboBox.SelectedValue),
-                    SupplierId = Convert.ToInt32(proveedorComboBox.SelectedValue)
+                    CategoriaId = Convert.ToInt32(categoriaComboBox.SelectedValue),
+                    ProveedorId = Convert.ToInt32(proveedorComboBox.SelectedValue)
                 };
                 _productoService.UpdateProduct(producto);
                 isEditing = false;
@@ -90,17 +103,26 @@ namespace PresentationLayer.Forms
             }
             else
             {
-                var producto = new Productos
+                try
                 {
-                    Nombre = nombreProductoTextBox.Text,
-                    Precio = Convert.ToDecimal(precioTextBox.Text),
-                    Stock = Convert.ToInt32(stockTextBox.Text),
-                    CategoryId = Convert.ToInt32(categoriaComboBox.SelectedValue),
-                    SupplierId = Convert.ToInt32(proveedorComboBox.SelectedValue)
-                };
-                _productoService.AddProduct(producto);
-                isEditing = false;
-                MessageBox.Show("Guardado");
+                    var producto = new Productos
+                    {
+                        Nombre = nombreProductoTextBox.Text,
+                        Precio = Convert.ToDecimal(precioTextBox.Text),
+                        Stock = Convert.ToInt32(stockTextBox.Text),
+                        CategoriaId = Convert.ToInt32(categoriaComboBox.SelectedValue),
+                        ProveedorId = Convert.ToInt32(proveedorComboBox.SelectedValue)
+                    };
+                    _productoService.AddProduct(producto);
+                    isEditing = false;
+                    MessageBox.Show("Guardado");
+                }
+                catch
+                {
+                     MessageBox.Show("Ingrese valores validos");
+                    return;
+                }
+                
             }
             LoadProductos();
             CleanForm();
@@ -134,7 +156,7 @@ namespace PresentationLayer.Forms
             string categoria = ClientesDataGridView.CurrentRow.Cells[4].Value.ToString();
             int categoriaId = Convert.ToInt32(ClientesDataGridView.CurrentRow.Cells[6].Value);
 
-            categoriaComboBox.SelectedValue = categoriaId; // Ninguna selección inicial
+            categoriaComboBox.SelectedValue = categoriaId; 
 
             string proveedor = ClientesDataGridView.CurrentRow.Cells[5].Value.ToString();
             int proveedorId = Convert.ToInt32(ClientesDataGridView.CurrentRow.Cells[7].Value);

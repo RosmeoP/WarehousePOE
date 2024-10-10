@@ -12,11 +12,11 @@ namespace BusinessLayer.Services
 {
     public class CategoriasService
         {
-        private CategoryRepository _categoryRepository;
+        private CategoriaRepository _categoryRepository;
 
         public CategoriasService()
         {
-            _categoryRepository = new CategoryRepository();
+            _categoryRepository = new CategoriaRepository();
         }
 
         public DataTable GetCategories()

@@ -14,6 +14,19 @@ namespace PresentationLayer.Forms
 {
     public partial class CategoriasForm : Form
     {
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            int grosorBorde = 4;
+            Color colorBorde = Color.Gray;
+
+            ControlPaint.DrawBorder(e.Graphics, this.ClientRectangle,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid
+            );
+        }
         private CategoriasService _categoriasService;
         bool isEditing = false;
         public CategoriasForm()
@@ -26,34 +39,34 @@ namespace PresentationLayer.Forms
         private void loadCategories()
         {
             DataTable categories = _categoriasService.GetCategories();
-            categoriesDataGridView.DataSource = categories;
+            categoriasDataGridView.DataSource = categories;
         }
 
 
         private void saveCategorieButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(categoriesTextBox.Text))
+            if (string.IsNullOrEmpty(categoriasTextBox.Text))
             {
                 MessageBox.Show("Por favor, rellene el campo");
                 return;
             }
 
             if (isEditing)
-            {   //UPDATING
+            {   
                 var categorie = new Categorias
                 {
                     Id = Convert.ToInt32(IdLabel.Text),
-                    Nombre = categoriesTextBox.Text,
+                    Nombre = categoriasTextBox.Text,
                 };
                 _categoriasService.UpdateCategory(categorie);
                 isEditing = false;
                 MessageBox.Show("Categoria actulizada con exito");
             }
             else
-            {   //DELETING
+            {   
                 var categorie = new Categorias
                 {
-                    Nombre = categoriesTextBox.Text,
+                    Nombre = categoriasTextBox.Text,
                 };
                 _categoriasService.CreateCategory(categorie);
                 isEditing = false;
@@ -67,32 +80,32 @@ namespace PresentationLayer.Forms
         {
 
             //UPDATE
-            if (categoriesDataGridView.SelectedRows.Count > 0)
+            if (categoriasDataGridView.SelectedRows.Count > 0)
             {
                 MessageBox.Show("Por favor, seleccione una categoria");
                 return;
             }
 
             isEditing = true;
-            int categorieId = Convert.ToInt32(categoriesDataGridView.CurrentRow.Cells[0].Value);
-            string nombre = categoriesDataGridView.CurrentRow.Cells[1].Value.ToString();
+            int categorieId = Convert.ToInt32(categoriasDataGridView.CurrentRow.Cells[0].Value);
+            string nombre = categoriasDataGridView.CurrentRow.Cells[1].Value.ToString();
 
             categorieIdLabel.Text = "ID:";
             IdLabel.Text = categorieId.ToString();
-            categoriesTextBox.Text = nombre;
+            categoriasTextBox.Text = nombre;
         }
 
         private void deleteCategorieButton_Click(object sender, EventArgs e)
         {
-            //DELETE
-            if (categoriesDataGridView.SelectedRows.Count > 0)
+            
+            if (categoriasDataGridView.SelectedRows.Count > 0)
             {
                 MessageBox.Show("Por favor, seleccione una categoria");
                 return;
             }
 
             isEditing = false;
-            int categoriId = Convert.ToInt32(categoriesDataGridView.CurrentRow.Cells[0].Value.ToString());
+            int categoriId = Convert.ToInt32(categoriasDataGridView.CurrentRow.Cells[0].Value.ToString());
             DialogResult confirmResult = MessageBox.Show("¿Está seguro de que desea eliminar esta categoria?",
                                                  "Confirmar eliminación",
                                                  MessageBoxButtons.YesNo);
@@ -116,7 +129,7 @@ namespace PresentationLayer.Forms
         {
             IdLabel.Text = "";
             categorieIdLabel.Text = "";
-            categoriesTextBox.Text = "";
+            categoriasTextBox.Text = "";
         }
 
         private void exitSelectBtn_Click(object sender, EventArgs e)

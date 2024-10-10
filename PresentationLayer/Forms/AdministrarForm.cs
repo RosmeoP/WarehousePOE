@@ -13,6 +13,19 @@ namespace PresentationLayer.Forms
 {
     public partial class AdministrarForm : Form
     {
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            int grosorBorde = 4;
+            Color colorBorde = Color.Gray;
+
+            ControlPaint.DrawBorder(e.Graphics, this.ClientRectangle,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid
+            );
+        }
         public AdministrarForm()
         {
             InitializeComponent();
@@ -35,7 +48,7 @@ namespace PresentationLayer.Forms
             categoriasForm.ShowDialog();
         }
 
-      
+
 
         private void exitBtn_Click_1(object sender, EventArgs e)
         {

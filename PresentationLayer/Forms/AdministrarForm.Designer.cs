@@ -31,97 +31,104 @@
             administrarLabel = new Label();
             proveedorLabel = new Label();
             categoriaLabel = new Label();
-            proveedorBtn = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            proveedorIconButton = new FontAwesome.Sharp.IconButton();
+            categoriaIconButton = new FontAwesome.Sharp.IconButton();
             exitBtn = new FontAwesome.Sharp.IconButton();
             SuspendLayout();
             // 
             // administrarLabel
             // 
             administrarLabel.AutoSize = true;
-            administrarLabel.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            administrarLabel.Location = new Point(208, 27);
+            administrarLabel.Font = new Font("Arial", 50F, FontStyle.Bold);
+            administrarLabel.Location = new Point(194, 54);
             administrarLabel.Name = "administrarLabel";
-            administrarLabel.Size = new Size(384, 70);
+            administrarLabel.Size = new Size(429, 78);
             administrarLabel.TabIndex = 0;
             administrarLabel.Text = "Administrar:";
             // 
             // proveedorLabel
             // 
             proveedorLabel.AutoSize = true;
-            proveedorLabel.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            proveedorLabel.Location = new Point(75, 258);
+            proveedorLabel.Font = new Font("Arial", 35F, FontStyle.Bold);
+            proveedorLabel.Location = new Point(129, 261);
             proveedorLabel.Name = "proveedorLabel";
-            proveedorLabel.Size = new Size(326, 70);
+            proveedorLabel.Size = new Size(255, 55);
             proveedorLabel.TabIndex = 1;
             proveedorLabel.Text = "Proveedor";
             // 
             // categoriaLabel
             // 
             categoriaLabel.AutoSize = true;
-            categoriaLabel.Font = new Font("Arial", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            categoriaLabel.Location = new Point(419, 258);
+            categoriaLabel.Font = new Font("Arial", 35F, FontStyle.Bold);
+            categoriaLabel.Location = new Point(430, 261);
             categoriaLabel.Name = "categoriaLabel";
-            categoriaLabel.Size = new Size(306, 70);
+            categoriaLabel.Size = new Size(241, 55);
             categoriaLabel.TabIndex = 2;
             categoriaLabel.Text = "Categoria";
             // 
-            // proveedorBtn
+            // proveedorIconButton
             // 
-            proveedorBtn.BackColor = Color.Wheat;
-            proveedorBtn.FlatStyle = FlatStyle.Flat;
-            proveedorBtn.ForeColor = SystemColors.ActiveCaptionText;
-            proveedorBtn.IconChar = FontAwesome.Sharp.IconChar.Users;
-            proveedorBtn.IconColor = Color.Black;
-            proveedorBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            proveedorBtn.Location = new Point(121, 160);
-            proveedorBtn.Name = "proveedorBtn";
-            proveedorBtn.Size = new Size(163, 104);
-            proveedorBtn.TabIndex = 3;
-            proveedorBtn.UseVisualStyleBackColor = false;
-            proveedorBtn.Click += proveedorBtn_Click;
+            proveedorIconButton.BackColor = Color.Wheat;
+            proveedorIconButton.FlatAppearance.BorderSize = 0;
+            proveedorIconButton.FlatStyle = FlatStyle.Flat;
+            proveedorIconButton.ForeColor = SystemColors.ActiveCaptionText;
+            proveedorIconButton.IconChar = FontAwesome.Sharp.IconChar.Users;
+            proveedorIconButton.IconColor = Color.Black;
+            proveedorIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            proveedorIconButton.Location = new Point(169, 187);
+            proveedorIconButton.Margin = new Padding(3, 2, 3, 2);
+            proveedorIconButton.Name = "proveedorIconButton";
+            proveedorIconButton.Size = new Size(143, 78);
+            proveedorIconButton.TabIndex = 3;
+            proveedorIconButton.UseVisualStyleBackColor = false;
+            proveedorIconButton.Click += proveedorBtn_Click;
             // 
-            // iconButton1
+            // categoriaIconButton
             // 
-            iconButton1.BackColor = Color.Wheat;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.ForeColor = SystemColors.ActiveCaptionText;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Tags;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(488, 160);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(163, 104);
-            iconButton1.TabIndex = 4;
-            iconButton1.UseVisualStyleBackColor = false;
-            iconButton1.Click += iconButton1_Click;
+            categoriaIconButton.BackColor = Color.Wheat;
+            categoriaIconButton.FlatAppearance.BorderSize = 0;
+            categoriaIconButton.FlatStyle = FlatStyle.Flat;
+            categoriaIconButton.ForeColor = SystemColors.ActiveCaptionText;
+            categoriaIconButton.IconChar = FontAwesome.Sharp.IconChar.Tags;
+            categoriaIconButton.IconColor = Color.Black;
+            categoriaIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            categoriaIconButton.Location = new Point(490, 187);
+            categoriaIconButton.Margin = new Padding(3, 2, 3, 2);
+            categoriaIconButton.Name = "categoriaIconButton";
+            categoriaIconButton.Size = new Size(143, 78);
+            categoriaIconButton.TabIndex = 4;
+            categoriaIconButton.UseVisualStyleBackColor = false;
+            categoriaIconButton.Click += iconButton1_Click;
             // 
             // exitBtn
             // 
+            exitBtn.FlatAppearance.BorderSize = 0;
             exitBtn.FlatStyle = FlatStyle.Flat;
             exitBtn.IconChar = FontAwesome.Sharp.IconChar.LessThan;
             exitBtn.IconColor = Color.Black;
             exitBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            exitBtn.Location = new Point(-1, 12);
+            exitBtn.Location = new Point(12, 12);
+            exitBtn.Margin = new Padding(3, 2, 3, 2);
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(71, 51);
+            exitBtn.Size = new Size(40, 40);
             exitBtn.TabIndex = 5;
             exitBtn.UseVisualStyleBackColor = true;
             exitBtn.Click += exitBtn_Click_1;
             // 
             // AdministrarForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Wheat;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(816, 489);
             Controls.Add(exitBtn);
-            Controls.Add(iconButton1);
-            Controls.Add(proveedorBtn);
+            Controls.Add(categoriaIconButton);
+            Controls.Add(proveedorIconButton);
             Controls.Add(categoriaLabel);
             Controls.Add(proveedorLabel);
             Controls.Add(administrarLabel);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "AdministrarForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -136,8 +143,8 @@
         private Label administrarLabel;
         private Label proveedorLabel;
         private Label categoriaLabel;
-        private FontAwesome.Sharp.IconButton proveedorBtn;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton proveedorIconButton;
+        private FontAwesome.Sharp.IconButton categoriaIconButton;
         private FontAwesome.Sharp.IconButton exitBtn;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer.Forms
 {
-    partial class ClienteForm
+    partial class EmpleadoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -55,7 +55,7 @@
             nombreProductoLabel.ForeColor = SystemColors.ActiveCaptionText;
             nombreProductoLabel.Location = new Point(62, 82);
             nombreProductoLabel.Name = "nombreProductoLabel";
-            nombreProductoLabel.Size = new Size(257, 29);
+            nombreProductoLabel.Size = new Size(206, 22);
             nombreProductoLabel.TabIndex = 0;
             nombreProductoLabel.Text = "Nombre del producto";
             // 
@@ -63,21 +63,21 @@
             // 
             nombreProductoTextBox.Location = new Point(62, 116);
             nombreProductoTextBox.Name = "nombreProductoTextBox";
-            nombreProductoTextBox.Size = new Size(174, 27);
+            nombreProductoTextBox.Size = new Size(174, 23);
             nombreProductoTextBox.TabIndex = 1;
             // 
             // precioTextBox
             // 
             precioTextBox.Location = new Point(336, 116);
             precioTextBox.Name = "precioTextBox";
-            precioTextBox.Size = new Size(156, 27);
+            precioTextBox.Size = new Size(156, 23);
             precioTextBox.TabIndex = 5;
             // 
             // stockTextBox
             // 
             stockTextBox.Location = new Point(62, 201);
             stockTextBox.Name = "stockTextBox";
-            stockTextBox.Size = new Size(174, 27);
+            stockTextBox.Size = new Size(174, 23);
             stockTextBox.TabIndex = 7;
             // 
             // ClientesDataGridView
@@ -98,7 +98,7 @@
             precioLabel.ForeColor = SystemColors.ActiveCaptionText;
             precioLabel.Location = new Point(336, 82);
             precioLabel.Name = "precioLabel";
-            precioLabel.Size = new Size(86, 29);
+            precioLabel.Size = new Size(70, 22);
             precioLabel.TabIndex = 9;
             precioLabel.Text = "Precio";
             // 
@@ -109,7 +109,7 @@
             stockLabel.ForeColor = SystemColors.ActiveCaptionText;
             stockLabel.Location = new Point(62, 162);
             stockLabel.Name = "stockLabel";
-            stockLabel.Size = new Size(78, 29);
+            stockLabel.Size = new Size(63, 22);
             stockLabel.TabIndex = 10;
             stockLabel.Text = "Stock";
             // 
@@ -120,7 +120,7 @@
             categoriaLabel.ForeColor = SystemColors.ActiveCaptionText;
             categoriaLabel.Location = new Point(336, 162);
             categoriaLabel.Name = "categoriaLabel";
-            categoriaLabel.Size = new Size(123, 29);
+            categoriaLabel.Size = new Size(100, 22);
             categoriaLabel.TabIndex = 11;
             categoriaLabel.Text = "Categoria";
             // 
@@ -186,6 +186,7 @@
             // 
             exitMainButton.FlatAppearance.BorderSize = 0;
             exitMainButton.FlatStyle = FlatStyle.Flat;
+            exitMainButton.ForeColor = Color.Wheat;
             exitMainButton.IconChar = FontAwesome.Sharp.IconChar.LessThan;
             exitMainButton.IconColor = Color.Black;
             exitMainButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -201,7 +202,7 @@
             proveedorComboBox.FormattingEnabled = true;
             proveedorComboBox.Location = new Point(62, 280);
             proveedorComboBox.Name = "proveedorComboBox";
-            proveedorComboBox.Size = new Size(426, 28);
+            proveedorComboBox.Size = new Size(426, 23);
             proveedorComboBox.TabIndex = 29;
             // 
             // proveedorLabel
@@ -211,7 +212,7 @@
             proveedorLabel.ForeColor = SystemColors.ActiveCaptionText;
             proveedorLabel.Location = new Point(62, 250);
             proveedorLabel.Name = "proveedorLabel";
-            proveedorLabel.Size = new Size(126, 27);
+            proveedorLabel.Size = new Size(108, 22);
             proveedorLabel.TabIndex = 30;
             proveedorLabel.Text = "Proveedor";
             // 
@@ -221,7 +222,7 @@
             categoriaComboBox.FormattingEnabled = true;
             categoriaComboBox.Location = new Point(336, 201);
             categoriaComboBox.Name = "categoriaComboBox";
-            categoriaComboBox.Size = new Size(156, 28);
+            categoriaComboBox.Size = new Size(156, 23);
             categoriaComboBox.TabIndex = 32;
             // 
             // productIdLabel
@@ -231,7 +232,7 @@
             productIdLabel.ForeColor = SystemColors.ActiveCaptionText;
             productIdLabel.Location = new Point(103, 53);
             productIdLabel.Name = "productIdLabel";
-            productIdLabel.Size = new Size(0, 29);
+            productIdLabel.Size = new Size(0, 22);
             productIdLabel.TabIndex = 34;
             // 
             // IdLabel
@@ -241,7 +242,7 @@
             IdLabel.ForeColor = SystemColors.ActiveCaptionText;
             IdLabel.Location = new Point(62, 53);
             IdLabel.Name = "IdLabel";
-            IdLabel.Size = new Size(0, 29);
+            IdLabel.Size = new Size(0, 22);
             IdLabel.TabIndex = 35;
             // 
             // ClienteForm

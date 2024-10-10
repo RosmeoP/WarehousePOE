@@ -12,6 +12,19 @@ namespace PresentationLayer.Forms
 {
     public partial class MainForm : Form
     {
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            int grosorBorde = 4;
+            Color colorBorde = Color.Gray;
+
+            ControlPaint.DrawBorder(e.Graphics, this.ClientRectangle,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid, 
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid, 
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid,
+            colorBorde, grosorBorde, ButtonBorderStyle.Solid 
+            );
+        }
         public MainForm()
         {
             InitializeComponent();
@@ -19,7 +32,7 @@ namespace PresentationLayer.Forms
 
         private void clienteButton_Click(object sender, EventArgs e)
         {
-            ClienteForm clienteForm = new ClienteForm();
+            EmpleadoForm clienteForm = new EmpleadoForm();
             clienteForm.ShowDialog();
         }
 

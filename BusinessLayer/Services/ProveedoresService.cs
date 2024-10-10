@@ -11,31 +11,31 @@ namespace BusinessLayer.Services
 {
     public class ProveedoresService
     {
-        private SupplierRepository _supplierRepository;
+        private ProveedorRepository _ProveedorRepository;
 
         public ProveedoresService()
         {
-            _supplierRepository = new SupplierRepository();
+            _ProveedorRepository = new ProveedorRepository();
         }
 
-        public DataTable GetSupplier()
+        public DataTable GetProveedor()
         {
-            return _supplierRepository.GetSupplier();
+            return _ProveedorRepository.GetProveedor();
         }
 
         public void CreateSupplier(Proveedores proveedores)
         {
-            _supplierRepository.CreateSupplier(proveedores);
+            _ProveedorRepository.CreateProveedor(proveedores);
         }
 
-        public void UpdateSupplier(Proveedores proveedores)
+        public void UpdateProveedor(Proveedores proveedores)
         {
-            _supplierRepository.UpdateSupplier(proveedores);
+            _ProveedorRepository.UpdateProveedor(proveedores);
         }
 
         public void DeleteSupplier(int id)
         {
-            _supplierRepository.DeleteSupplier(id);
+            _ProveedorRepository.DeleteProveedor(id);
         }
     }
 }
