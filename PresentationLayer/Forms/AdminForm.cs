@@ -23,7 +23,22 @@ namespace PresentationLayer.Forms
 
             LoadSuppliers();
         }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
 
+            // Dibujar un borde de color alrededor del formulario
+            int grosorBorde = 3; // Grosor del borde
+            Color colorBorde = Color.Gray; // Color del borde
+
+            // Dibujar un rectángulo alrededor del borde del formulario
+            ControlPaint.DrawBorder(e.Graphics, this.ClientRectangle,
+                colorBorde, grosorBorde, ButtonBorderStyle.Solid, // Borde superior
+                colorBorde, grosorBorde, ButtonBorderStyle.Solid, // Borde izquierdo
+                colorBorde, grosorBorde, ButtonBorderStyle.Solid, // Borde inferior
+                colorBorde, grosorBorde, ButtonBorderStyle.Solid  // Borde derecho
+            );
+        }
         private void LoadSuppliers()
         {
             DataTable suppliersTable = _supplierRepo.GetSupplier();
