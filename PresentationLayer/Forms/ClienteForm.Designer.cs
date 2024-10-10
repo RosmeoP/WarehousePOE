@@ -44,6 +44,7 @@
             proveedorLabel = new Label();
             categoriaComboBox = new ComboBox();
             productIdLabel = new Label();
+            IdLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)ClientesDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -81,12 +82,13 @@
             // 
             // ClientesDataGridView
             // 
+            ClientesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             ClientesDataGridView.BackgroundColor = Color.White;
             ClientesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ClientesDataGridView.Location = new Point(62, 337);
+            ClientesDataGridView.Location = new Point(62, 322);
             ClientesDataGridView.Name = "ClientesDataGridView";
             ClientesDataGridView.RowHeadersWidth = 51;
-            ClientesDataGridView.Size = new Size(812, 301);
+            ClientesDataGridView.Size = new Size(699, 301);
             ClientesDataGridView.TabIndex = 8;
             // 
             // precioLabel
@@ -197,7 +199,7 @@
             // 
             proveedorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             proveedorComboBox.FormattingEnabled = true;
-            proveedorComboBox.Location = new Point(66, 288);
+            proveedorComboBox.Location = new Point(62, 280);
             proveedorComboBox.Name = "proveedorComboBox";
             proveedorComboBox.Size = new Size(426, 28);
             proveedorComboBox.TabIndex = 29;
@@ -207,7 +209,7 @@
             proveedorLabel.AutoSize = true;
             proveedorLabel.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             proveedorLabel.ForeColor = SystemColors.ActiveCaptionText;
-            proveedorLabel.Location = new Point(68, 258);
+            proveedorLabel.Location = new Point(62, 250);
             proveedorLabel.Name = "proveedorLabel";
             proveedorLabel.Size = new Size(126, 27);
             proveedorLabel.TabIndex = 30;
@@ -225,20 +227,30 @@
             // productIdLabel
             // 
             productIdLabel.AutoSize = true;
-            productIdLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            productIdLabel.ForeColor = Color.Wheat;
-            productIdLabel.Location = new Point(62, 54);
+            productIdLabel.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            productIdLabel.ForeColor = SystemColors.ActiveCaptionText;
+            productIdLabel.Location = new Point(103, 53);
             productIdLabel.Name = "productIdLabel";
-            productIdLabel.Size = new Size(65, 28);
-            productIdLabel.TabIndex = 33;
-            productIdLabel.Text = "label1";
+            productIdLabel.Size = new Size(0, 29);
+            productIdLabel.TabIndex = 34;
+            // 
+            // IdLabel
+            // 
+            IdLabel.AutoSize = true;
+            IdLabel.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            IdLabel.ForeColor = SystemColors.ActiveCaptionText;
+            IdLabel.Location = new Point(62, 53);
+            IdLabel.Name = "IdLabel";
+            IdLabel.Size = new Size(0, 29);
+            IdLabel.TabIndex = 35;
             // 
             // ClienteForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.Wheat;
             CancelButton = exitMainButton;
-            ClientSize = new Size(935, 650);
+            ClientSize = new Size(834, 650);
+            Controls.Add(IdLabel);
             Controls.Add(productIdLabel);
             Controls.Add(categoriaComboBox);
             Controls.Add(proveedorLabel);
@@ -284,5 +296,6 @@
         private Label proveedorLabel;
         private ComboBox categoriaComboBox;
         private Label productIdLabel;
+        private Label IdLabel;
     }
 }

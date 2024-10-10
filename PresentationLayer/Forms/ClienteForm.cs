@@ -107,6 +107,7 @@ namespace PresentationLayer.Forms
         }
         private void CleanForm()
         {
+            IdLabel.Text = "";
             productIdLabel.Text = "";
             nombreProductoTextBox.Text = "";
             precioTextBox.Text = "";
@@ -138,6 +139,7 @@ namespace PresentationLayer.Forms
             string proveedor = ClientesDataGridView.CurrentRow.Cells[5].Value.ToString();
             int proveedorId = Convert.ToInt32(ClientesDataGridView.CurrentRow.Cells[7].Value);
 
+            IdLabel.Text = "ID:";
             productIdLabel.Text = productoId.ToString();
             nombreProductoTextBox.Text = nombre;
             precioTextBox.Text = precio.ToString();

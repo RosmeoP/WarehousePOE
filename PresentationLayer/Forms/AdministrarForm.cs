@@ -40,9 +40,6 @@ namespace PresentationLayer.Forms
         private void exitBtn_Click_1(object sender, EventArgs e)
         {
             this.Close();
-
-            MainForm mainForm = new MainForm();
-            mainForm.ShowDialog();
         }
     }
 }

@@ -29,78 +29,26 @@
         private void InitializeComponent()
         {
             categoriasLabel = new Label();
-            comboBox1 = new ComboBox();
-            guardarBtn = new FontAwesome.Sharp.IconButton();
-            editarBtn = new FontAwesome.Sharp.IconButton();
-            eliminarCategoriaBtns = new FontAwesome.Sharp.IconButton();
             exitSelectBtn = new FontAwesome.Sharp.IconButton();
+            categoriesDataGridView = new DataGridView();
+            editCategorieButton = new FontAwesome.Sharp.IconButton();
+            deleteCategorieButton = new FontAwesome.Sharp.IconButton();
+            saveCategorieButton = new FontAwesome.Sharp.IconButton();
+            categoriesTextBox = new TextBox();
+            categorieIdLabel = new Label();
+            IdLabel = new Label();
+            ((System.ComponentModel.ISupportInitialize)categoriesDataGridView).BeginInit();
             SuspendLayout();
             // 
             // categoriasLabel
             // 
             categoriasLabel.AutoSize = true;
             categoriasLabel.Font = new Font("Arial", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            categoriasLabel.Location = new Point(94, 34);
+            categoriasLabel.Location = new Point(61, 43);
             categoriasLabel.Name = "categoriasLabel";
             categoriasLabel.Size = new Size(267, 55);
             categoriasLabel.TabIndex = 0;
             categoriasLabel.Text = "Categorias";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(103, 132);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(375, 28);
-            comboBox1.TabIndex = 1;
-            // 
-            // guardarBtn
-            // 
-            guardarBtn.Anchor = AnchorStyles.Top;
-            guardarBtn.FlatStyle = FlatStyle.Flat;
-            guardarBtn.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            guardarBtn.IconColor = Color.Black;
-            guardarBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            guardarBtn.IconSize = 50;
-            guardarBtn.Location = new Point(578, 96);
-            guardarBtn.Name = "guardarBtn";
-            guardarBtn.Size = new Size(167, 70);
-            guardarBtn.TabIndex = 2;
-            guardarBtn.Text = "Guardar";
-            guardarBtn.TextAlign = ContentAlignment.MiddleRight;
-            guardarBtn.UseVisualStyleBackColor = true;
-            // 
-            // editarBtn
-            // 
-            editarBtn.Anchor = AnchorStyles.Top;
-            editarBtn.FlatStyle = FlatStyle.Flat;
-            editarBtn.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            editarBtn.IconColor = Color.Black;
-            editarBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            editarBtn.IconSize = 50;
-            editarBtn.Location = new Point(578, 189);
-            editarBtn.Name = "editarBtn";
-            editarBtn.Size = new Size(167, 70);
-            editarBtn.TabIndex = 3;
-            editarBtn.Text = "Editar";
-            editarBtn.TextAlign = ContentAlignment.MiddleRight;
-            editarBtn.UseVisualStyleBackColor = true;
-            // 
-            // eliminarCategoriaBtns
-            // 
-            eliminarCategoriaBtns.Anchor = AnchorStyles.Top;
-            eliminarCategoriaBtns.FlatStyle = FlatStyle.Flat;
-            eliminarCategoriaBtns.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
-            eliminarCategoriaBtns.IconColor = Color.Black;
-            eliminarCategoriaBtns.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            eliminarCategoriaBtns.IconSize = 50;
-            eliminarCategoriaBtns.Location = new Point(578, 282);
-            eliminarCategoriaBtns.Name = "eliminarCategoriaBtns";
-            eliminarCategoriaBtns.Size = new Size(167, 70);
-            eliminarCategoriaBtns.TabIndex = 4;
-            eliminarCategoriaBtns.Text = "Eliminar";
-            eliminarCategoriaBtns.TextAlign = ContentAlignment.MiddleRight;
-            eliminarCategoriaBtns.UseVisualStyleBackColor = true;
             // 
             // exitSelectBtn
             // 
@@ -110,26 +58,129 @@
             exitSelectBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             exitSelectBtn.Location = new Point(12, 12);
             exitSelectBtn.Name = "exitSelectBtn";
-            exitSelectBtn.Size = new Size(57, 71);
+            exitSelectBtn.Size = new Size(48, 46);
             exitSelectBtn.TabIndex = 5;
             exitSelectBtn.UseVisualStyleBackColor = true;
             exitSelectBtn.Click += exitSelectBtn_Click;
+            // 
+            // categoriesDataGridView
+            // 
+            categoriesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            categoriesDataGridView.BackgroundColor = Color.White;
+            categoriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            categoriesDataGridView.Location = new Point(61, 201);
+            categoriesDataGridView.Name = "categoriesDataGridView";
+            categoriesDataGridView.RowHeadersWidth = 51;
+            categoriesDataGridView.Size = new Size(466, 338);
+            categoriesDataGridView.TabIndex = 6;
+            // 
+            // editCategorieButton
+            // 
+            editCategorieButton.BackColor = Color.LightSalmon;
+            editCategorieButton.FlatAppearance.BorderColor = Color.LightSalmon;
+            editCategorieButton.FlatAppearance.BorderSize = 0;
+            editCategorieButton.FlatStyle = FlatStyle.Flat;
+            editCategorieButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            editCategorieButton.ForeColor = SystemColors.ActiveCaptionText;
+            editCategorieButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            editCategorieButton.IconColor = Color.Black;
+            editCategorieButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            editCategorieButton.ImageAlign = ContentAlignment.MiddleLeft;
+            editCategorieButton.Location = new Point(559, 161);
+            editCategorieButton.Name = "editCategorieButton";
+            editCategorieButton.Size = new Size(229, 65);
+            editCategorieButton.TabIndex = 17;
+            editCategorieButton.Text = "Editar";
+            editCategorieButton.UseVisualStyleBackColor = false;
+            editCategorieButton.Click += editCategorieButton_Click;
+            // 
+            // deleteCategorieButton
+            // 
+            deleteCategorieButton.BackColor = Color.LightSalmon;
+            deleteCategorieButton.FlatAppearance.BorderSize = 0;
+            deleteCategorieButton.FlatStyle = FlatStyle.Flat;
+            deleteCategorieButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            deleteCategorieButton.ForeColor = SystemColors.ActiveCaptionText;
+            deleteCategorieButton.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            deleteCategorieButton.IconColor = Color.Black;
+            deleteCategorieButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            deleteCategorieButton.ImageAlign = ContentAlignment.MiddleLeft;
+            deleteCategorieButton.Location = new Point(559, 232);
+            deleteCategorieButton.Name = "deleteCategorieButton";
+            deleteCategorieButton.Size = new Size(229, 65);
+            deleteCategorieButton.TabIndex = 16;
+            deleteCategorieButton.Text = "Borrar";
+            deleteCategorieButton.UseVisualStyleBackColor = false;
+            deleteCategorieButton.Click += deleteCategorieButton_Click;
+            // 
+            // saveCategorieButton
+            // 
+            saveCategorieButton.BackColor = Color.LightSalmon;
+            saveCategorieButton.FlatAppearance.BorderSize = 0;
+            saveCategorieButton.FlatStyle = FlatStyle.Flat;
+            saveCategorieButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            saveCategorieButton.ForeColor = SystemColors.ActiveCaptionText;
+            saveCategorieButton.IconChar = FontAwesome.Sharp.IconChar.Save;
+            saveCategorieButton.IconColor = Color.Black;
+            saveCategorieButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            saveCategorieButton.ImageAlign = ContentAlignment.MiddleLeft;
+            saveCategorieButton.Location = new Point(559, 91);
+            saveCategorieButton.Name = "saveCategorieButton";
+            saveCategorieButton.Size = new Size(229, 65);
+            saveCategorieButton.TabIndex = 15;
+            saveCategorieButton.Text = "Guardar";
+            saveCategorieButton.UseVisualStyleBackColor = false;
+            saveCategorieButton.Click += saveCategorieButton_Click;
+            // 
+            // categoriesTextBox
+            // 
+            categoriesTextBox.Location = new Point(61, 143);
+            categoriesTextBox.Name = "categoriesTextBox";
+            categoriesTextBox.Size = new Size(466, 27);
+            categoriesTextBox.TabIndex = 18;
+            // 
+            // categorieIdLabel
+            // 
+            categorieIdLabel.AutoSize = true;
+            categorieIdLabel.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            categorieIdLabel.ForeColor = SystemColors.ActiveCaptionText;
+            categorieIdLabel.Location = new Point(61, 109);
+            categorieIdLabel.Name = "categorieIdLabel";
+            categorieIdLabel.Size = new Size(0, 29);
+            categorieIdLabel.TabIndex = 19;
+            // 
+            // IdLabel
+            // 
+            IdLabel.AutoSize = true;
+            IdLabel.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            IdLabel.ForeColor = SystemColors.ActiveCaptionText;
+            IdLabel.Location = new Point(96, 109);
+            IdLabel.Name = "IdLabel";
+            IdLabel.Size = new Size(0, 29);
+            IdLabel.TabIndex = 20;
             // 
             // CategoriasForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Wheat;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 551);
+            Controls.Add(IdLabel);
+            Controls.Add(categorieIdLabel);
+            Controls.Add(categoriesTextBox);
+            Controls.Add(editCategorieButton);
+            Controls.Add(deleteCategorieButton);
+            Controls.Add(saveCategorieButton);
+            Controls.Add(categoriesDataGridView);
             Controls.Add(exitSelectBtn);
-            Controls.Add(eliminarCategoriaBtns);
-            Controls.Add(editarBtn);
-            Controls.Add(guardarBtn);
-            Controls.Add(comboBox1);
             Controls.Add(categoriasLabel);
             ForeColor = SystemColors.ActiveCaptionText;
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
             Name = "CategoriasForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CategoriasForm";
+            ((System.ComponentModel.ISupportInitialize)categoriesDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -137,10 +188,14 @@
         #endregion
 
         private Label categoriasLabel;
-        private ComboBox comboBox1;
-        private FontAwesome.Sharp.IconButton guardarBtn;
-        private FontAwesome.Sharp.IconButton editarBtn;
-        private FontAwesome.Sharp.IconButton eliminarCategoriaBtns;
+        private ComboBox categoriesComboBox;
         private FontAwesome.Sharp.IconButton exitSelectBtn;
+        private DataGridView categoriesDataGridView;
+        private FontAwesome.Sharp.IconButton editCategorieButton;
+        private FontAwesome.Sharp.IconButton deleteCategorieButton;
+        private FontAwesome.Sharp.IconButton saveCategorieButton;
+        private TextBox categoriesTextBox;
+        private Label categorieIdLabel;
+        private Label IdLabel;
     }
 }

@@ -121,7 +121,10 @@
             Controls.Add(categoriaLabel);
             Controls.Add(proveedorLabel);
             Controls.Add(administrarLabel);
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
             Name = "AdministrarForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdministrarForm";
             Load += AdministrarForm_Load;
             ResumeLayout(false);
