@@ -41,6 +41,8 @@
             nombreProveedorTextBox = new TextBox();
             nombreProveedorLabel = new Label();
             exitAdminButton = new FontAwesome.Sharp.IconButton();
+            IdLabel = new Label();
+            productIdLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)ProveedorDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -107,7 +109,7 @@
             direccionLabel.AutoSize = true;
             direccionLabel.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             direccionLabel.ForeColor = SystemColors.ActiveCaptionText;
-            direccionLabel.Location = new Point(337, 97);
+            direccionLabel.Location = new Point(51, 227);
             direccionLabel.Name = "direccionLabel";
             direccionLabel.Size = new Size(122, 29);
             direccionLabel.TabIndex = 22;
@@ -118,7 +120,7 @@
             telefonoLabel.AutoSize = true;
             telefonoLabel.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             telefonoLabel.ForeColor = SystemColors.ActiveCaptionText;
-            telefonoLabel.Location = new Point(51, 187);
+            telefonoLabel.Location = new Point(51, 156);
             telefonoLabel.Name = "telefonoLabel";
             telefonoLabel.Size = new Size(112, 29);
             telefonoLabel.TabIndex = 21;
@@ -127,6 +129,7 @@
             // 
             // ProveedorDataGridView
             // 
+            ProveedorDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             ProveedorDataGridView.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -145,32 +148,32 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             ProveedorDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            ProveedorDataGridView.Location = new Point(51, 308);
+            ProveedorDataGridView.Location = new Point(51, 327);
             ProveedorDataGridView.Name = "ProveedorDataGridView";
             ProveedorDataGridView.RowHeadersWidth = 51;
-            ProveedorDataGridView.Size = new Size(663, 301);
+            ProveedorDataGridView.Size = new Size(699, 282);
             ProveedorDataGridView.TabIndex = 20;
             // 
             // direccionTextBox
             // 
-            direccionTextBox.Location = new Point(290, 131);
+            direccionTextBox.Location = new Point(51, 259);
             direccionTextBox.Multiline = true;
             direccionTextBox.Name = "direccionTextBox";
-            direccionTextBox.Size = new Size(200, 100);
+            direccionTextBox.Size = new Size(452, 51);
             direccionTextBox.TabIndex = 19;
             // 
             // telefonoTextBox
             // 
-            telefonoTextBox.Location = new Point(51, 221);
+            telefonoTextBox.Location = new Point(51, 188);
             telefonoTextBox.Name = "telefonoTextBox";
-            telefonoTextBox.Size = new Size(100, 27);
+            telefonoTextBox.Size = new Size(295, 27);
             telefonoTextBox.TabIndex = 18;
             // 
             // nombreProveedorTextBox
             // 
-            nombreProveedorTextBox.Location = new Point(51, 131);
+            nombreProveedorTextBox.Location = new Point(51, 118);
             nombreProveedorTextBox.Name = "nombreProveedorTextBox";
-            nombreProveedorTextBox.Size = new Size(174, 27);
+            nombreProveedorTextBox.Size = new Size(295, 27);
             nombreProveedorTextBox.TabIndex = 16;
             // 
             // nombreProveedorLabel
@@ -178,7 +181,7 @@
             nombreProveedorLabel.AutoSize = true;
             nombreProveedorLabel.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nombreProveedorLabel.ForeColor = SystemColors.ActiveCaptionText;
-            nombreProveedorLabel.Location = new Point(51, 97);
+            nombreProveedorLabel.Location = new Point(51, 86);
             nombreProveedorLabel.Name = "nombreProveedorLabel";
             nombreProveedorLabel.Size = new Size(269, 29);
             nombreProveedorLabel.TabIndex = 15;
@@ -199,12 +202,34 @@
             exitAdminButton.UseVisualStyleBackColor = true;
             exitAdminButton.Click += exitAdminButton_Click;
             // 
+            // IdLabel
+            // 
+            IdLabel.AutoSize = true;
+            IdLabel.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            IdLabel.ForeColor = SystemColors.ActiveCaptionText;
+            IdLabel.Location = new Point(51, 57);
+            IdLabel.Name = "IdLabel";
+            IdLabel.Size = new Size(0, 29);
+            IdLabel.TabIndex = 29;
+            // 
+            // productIdLabel
+            // 
+            productIdLabel.AutoSize = true;
+            productIdLabel.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            productIdLabel.ForeColor = SystemColors.ActiveCaptionText;
+            productIdLabel.Location = new Point(85, 57);
+            productIdLabel.Name = "productIdLabel";
+            productIdLabel.Size = new Size(0, 29);
+            productIdLabel.TabIndex = 30;
+            // 
             // AdminForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.Wheat;
             CancelButton = exitAdminButton;
             ClientSize = new Size(800, 650);
+            Controls.Add(productIdLabel);
+            Controls.Add(IdLabel);
             Controls.Add(exitAdminButton);
             Controls.Add(editarProveedorIconButton);
             Controls.Add(deleteProveedorIconButton);
@@ -239,5 +264,7 @@
         private TextBox nombreProveedorTextBox;
         private Label nombreProveedorLabel;
         private FontAwesome.Sharp.IconButton exitAdminButton;
+        private Label IdLabel;
+        private Label productIdLabel;
     }
 }
