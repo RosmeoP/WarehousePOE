@@ -30,7 +30,6 @@
         {
             nombreProductoLabel = new Label();
             nombreProductoTextBox = new TextBox();
-            categoriaTextBox = new TextBox();
             precioTextBox = new TextBox();
             stockTextBox = new TextBox();
             ClientesDataGridView = new DataGridView();
@@ -43,6 +42,8 @@
             exitMainButton = new FontAwesome.Sharp.IconButton();
             proveedorComboBox = new ComboBox();
             proveedorLabel = new Label();
+            categoriaComboBox = new ComboBox();
+            productIdLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)ClientesDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -63,13 +64,6 @@
             nombreProductoTextBox.Name = "nombreProductoTextBox";
             nombreProductoTextBox.Size = new Size(174, 27);
             nombreProductoTextBox.TabIndex = 1;
-            // 
-            // categoriaTextBox
-            // 
-            categoriaTextBox.Location = new Point(336, 201);
-            categoriaTextBox.Name = "categoriaTextBox";
-            categoriaTextBox.Size = new Size(156, 27);
-            categoriaTextBox.TabIndex = 3;
             // 
             // precioTextBox
             // 
@@ -92,7 +86,7 @@
             ClientesDataGridView.Location = new Point(62, 337);
             ClientesDataGridView.Name = "ClientesDataGridView";
             ClientesDataGridView.RowHeadersWidth = 51;
-            ClientesDataGridView.Size = new Size(663, 301);
+            ClientesDataGridView.Size = new Size(812, 301);
             ClientesDataGridView.TabIndex = 8;
             // 
             // precioLabel
@@ -201,8 +195,9 @@
             // 
             // proveedorComboBox
             // 
+            proveedorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             proveedorComboBox.FormattingEnabled = true;
-            proveedorComboBox.Location = new Point(66, 293);
+            proveedorComboBox.Location = new Point(66, 288);
             proveedorComboBox.Name = "proveedorComboBox";
             proveedorComboBox.Size = new Size(426, 28);
             proveedorComboBox.TabIndex = 29;
@@ -218,12 +213,34 @@
             proveedorLabel.TabIndex = 30;
             proveedorLabel.Text = "Proveedor";
             // 
+            // categoriaComboBox
+            // 
+            categoriaComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            categoriaComboBox.FormattingEnabled = true;
+            categoriaComboBox.Location = new Point(336, 201);
+            categoriaComboBox.Name = "categoriaComboBox";
+            categoriaComboBox.Size = new Size(156, 28);
+            categoriaComboBox.TabIndex = 32;
+            // 
+            // productIdLabel
+            // 
+            productIdLabel.AutoSize = true;
+            productIdLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            productIdLabel.ForeColor = Color.Wheat;
+            productIdLabel.Location = new Point(62, 54);
+            productIdLabel.Name = "productIdLabel";
+            productIdLabel.Size = new Size(65, 28);
+            productIdLabel.TabIndex = 33;
+            productIdLabel.Text = "label1";
+            // 
             // ClienteForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.Wheat;
             CancelButton = exitMainButton;
-            ClientSize = new Size(800, 650);
+            ClientSize = new Size(935, 650);
+            Controls.Add(productIdLabel);
+            Controls.Add(categoriaComboBox);
             Controls.Add(proveedorLabel);
             Controls.Add(proveedorComboBox);
             Controls.Add(exitMainButton);
@@ -236,7 +253,6 @@
             Controls.Add(ClientesDataGridView);
             Controls.Add(stockTextBox);
             Controls.Add(precioTextBox);
-            Controls.Add(categoriaTextBox);
             Controls.Add(nombreProductoTextBox);
             Controls.Add(nombreProductoLabel);
             ForeColor = Color.Wheat;
@@ -253,7 +269,6 @@
 
         private Label nombreProductoLabel;
         private TextBox nombreProductoTextBox;
-        private TextBox categoriaTextBox;
         private TextBox precioTextBox;
         private TextBox stockTextBox;
         private DataGridView ClientesDataGridView;
@@ -266,5 +281,7 @@
         private FontAwesome.Sharp.IconButton exitMainButton;
         private ComboBox proveedorComboBox;
         private Label proveedorLabel;
+        private ComboBox categoriaComboBox;
+        private Label productIdLabel;
     }
 }

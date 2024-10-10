@@ -47,11 +47,14 @@ namespace DataAccessLayer.Repositories
             using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"SELECT 
+                                    p.Id AS Id,
                                     p.Nombre AS Producto,  
                                     p.Precio,  
                                     p.Stock,  
                                     c.Nombre AS Categoria, 
-                                    pr.Nombre AS Proveedor
+                                    pr.Nombre AS Proveedor,
+                                    c.Id AS CategoriaId,
+                                    pr.Id AS ProveedorId
                                 FROM Productos p  
                                 JOIN Categorias c ON p.IdCategoria = c.Id 
                                 JOIN Proveedores pr ON p.IdProveedor = pr.Id";
