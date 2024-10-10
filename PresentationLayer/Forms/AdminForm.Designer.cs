@@ -62,6 +62,7 @@
             editarProveedorIconButton.TabIndex = 26;
             editarProveedorIconButton.Text = "Editar";
             editarProveedorIconButton.UseVisualStyleBackColor = false;
+            editarProveedorIconButton.Click += editarProveedorIconButton_Click;
             // 
             // deleteProveedorIconButton
             // 
@@ -80,6 +81,7 @@
             deleteProveedorIconButton.TabIndex = 25;
             deleteProveedorIconButton.Text = "Borrar";
             deleteProveedorIconButton.UseVisualStyleBackColor = false;
+            deleteProveedorIconButton.Click += deleteProveedorIconButton_Click;
             // 
             // guardarProveedorIconButton
             // 
@@ -98,6 +100,7 @@
             guardarProveedorIconButton.TabIndex = 24;
             guardarProveedorIconButton.Text = "Guardar";
             guardarProveedorIconButton.UseVisualStyleBackColor = false;
+            guardarProveedorIconButton.Click += guardarProveedorIconButton_Click;
             // 
             // direccionLabel
             // 
@@ -106,7 +109,7 @@
             direccionLabel.ForeColor = SystemColors.ActiveCaptionText;
             direccionLabel.Location = new Point(337, 97);
             direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new Size(99, 22);
+            direccionLabel.Size = new Size(122, 29);
             direccionLabel.TabIndex = 22;
             direccionLabel.Text = "Direccion";
             // 
@@ -117,7 +120,7 @@
             telefonoLabel.ForeColor = SystemColors.ActiveCaptionText;
             telefonoLabel.Location = new Point(51, 187);
             telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new Size(91, 22);
+            telefonoLabel.Size = new Size(112, 29);
             telefonoLabel.TabIndex = 21;
             telefonoLabel.Text = "Telefono";
             telefonoLabel.TextAlign = ContentAlignment.TopCenter;
@@ -144,6 +147,7 @@
             ProveedorDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             ProveedorDataGridView.Location = new Point(51, 308);
             ProveedorDataGridView.Name = "ProveedorDataGridView";
+            ProveedorDataGridView.RowHeadersWidth = 51;
             ProveedorDataGridView.Size = new Size(663, 301);
             ProveedorDataGridView.TabIndex = 20;
             // 
@@ -159,14 +163,14 @@
             // 
             telefonoTextBox.Location = new Point(51, 221);
             telefonoTextBox.Name = "telefonoTextBox";
-            telefonoTextBox.Size = new Size(100, 23);
+            telefonoTextBox.Size = new Size(100, 27);
             telefonoTextBox.TabIndex = 18;
             // 
             // nombreProveedorTextBox
             // 
             nombreProveedorTextBox.Location = new Point(51, 131);
             nombreProveedorTextBox.Name = "nombreProveedorTextBox";
-            nombreProveedorTextBox.Size = new Size(174, 23);
+            nombreProveedorTextBox.Size = new Size(174, 27);
             nombreProveedorTextBox.TabIndex = 16;
             // 
             // nombreProveedorLabel
@@ -176,7 +180,7 @@
             nombreProveedorLabel.ForeColor = SystemColors.ActiveCaptionText;
             nombreProveedorLabel.Location = new Point(51, 97);
             nombreProveedorLabel.Name = "nombreProveedorLabel";
-            nombreProveedorLabel.Size = new Size(218, 22);
+            nombreProveedorLabel.Size = new Size(269, 29);
             nombreProveedorLabel.TabIndex = 15;
             nombreProveedorLabel.Text = "Nombre del proveedor";
             // 
