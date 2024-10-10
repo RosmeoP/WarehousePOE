@@ -166,5 +166,10 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("Producto eliminado correctamente");
             }
         }
+
+        private void ClienteForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

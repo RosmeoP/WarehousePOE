@@ -82,7 +82,7 @@ namespace PresentationLayer.Forms
 
         private void deleteProveedorIconButton_Click(object sender, EventArgs e)
         {
-            if(ProveedorDataGridView.SelectedRows.Count == 0)
+            if (ProveedorDataGridView.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Por favor, seleccione un proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -94,6 +94,14 @@ namespace PresentationLayer.Forms
             _supplierRepo.DeleteSupplier(id);
             LoadSuppliers();
             MessageBox.Show("Proveedor eliminado correctamente", "Proveedor eliminado");
+        }
+
+        private void exitAdminButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            AdministrarForm administrarForm = new AdministrarForm();
+            administrarForm.ShowDialog();
         }
     }
 }

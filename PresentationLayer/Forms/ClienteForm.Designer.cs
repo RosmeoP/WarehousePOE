@@ -260,6 +260,7 @@
             Name = "ClienteForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ClienteForm";
+            Load += ClienteForm_Load;
             ((System.ComponentModel.ISupportInitialize)ClientesDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();

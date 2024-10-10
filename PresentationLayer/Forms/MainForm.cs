@@ -25,13 +25,18 @@ namespace PresentationLayer.Forms
 
         private void adminButton_Click(object sender, EventArgs e)
         {
-            AdminForm adminForm = new AdminForm();
-            adminForm.ShowDialog();
+            AdministrarForm administrarForm = new AdministrarForm();
+            administrarForm.ShowDialog();
         }
 
         private void exitMainButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

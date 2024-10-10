@@ -13,7 +13,7 @@ namespace DataAccessLayer.DbConnection
 
 		public SqlDataAccess()
 		{
-			_connectionString = "Data Source=.;Initial Catalog=almacenDB;Integrated Security=True;Encrypt=False";
+			_connectionString = "Data Source=DESKTOP-J4U66GV\\SQLEXPRESS;Initial Catalog=almacenDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
 		}
 
 		public SqlConnection GetConnection()

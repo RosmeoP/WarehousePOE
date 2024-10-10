@@ -42,7 +42,7 @@
             titleLabel.Font = new Font("Arial", 50F, FontStyle.Bold, GraphicsUnit.Point, 0);
             titleLabel.Location = new Point(148, 73);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(518, 78);
+            titleLabel.Size = new Size(649, 97);
             titleLabel.TabIndex = 0;
             titleLabel.Text = "Ingresar como:";
             // 
@@ -82,7 +82,7 @@
             clienteLabel.Font = new Font("Arial", 35F, FontStyle.Bold, GraphicsUnit.Point, 0);
             clienteLabel.Location = new Point(117, 349);
             clienteLabel.Name = "clienteLabel";
-            clienteLabel.Size = new Size(249, 55);
+            clienteLabel.Size = new Size(311, 69);
             clienteLabel.TabIndex = 3;
             clienteLabel.Text = "Empleado";
             // 
@@ -92,7 +92,7 @@
             adminLabel.Font = new Font("Arial", 35F, FontStyle.Bold, GraphicsUnit.Point, 0);
             adminLabel.Location = new Point(473, 342);
             adminLabel.Name = "adminLabel";
-            adminLabel.Size = new Size(170, 55);
+            adminLabel.Size = new Size(211, 69);
             adminLabel.TabIndex = 4;
             adminLabel.Text = "Admin";
             // 
@@ -128,6 +128,7 @@
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
+            Load += MainForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

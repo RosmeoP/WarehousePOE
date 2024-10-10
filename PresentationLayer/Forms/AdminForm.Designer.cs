@@ -197,6 +197,7 @@
             exitAdminButton.Size = new Size(40, 40);
             exitAdminButton.TabIndex = 27;
             exitAdminButton.UseVisualStyleBackColor = true;
+            exitAdminButton.Click += exitAdminButton_Click;
             // 
             // AdminForm
             // 
