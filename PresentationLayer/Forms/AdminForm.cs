@@ -15,6 +15,7 @@ namespace PresentationLayer.Forms
     public partial class AdminForm : Form
     {
         private SupplierRepository _supplierRepo;
+        bool isEditing = false;
         public AdminForm()
         {
             InitializeComponent();
@@ -37,63 +38,89 @@ namespace PresentationLayer.Forms
                 return;
             }
 
-            var proveedores = new Proveedores
+            if (isEditing)
             {
-                Nombre = nombreProveedorTextBox.Text,
-                Direccion = direccionTextBox.Text,
-                Telefono = telefonoTextBox.Text
-            };
+                var newSupplier = new Proveedores
+                {
+                    Id = Convert.ToInt32(productIdLabel.Text),
+                    Nombre = nombreProveedorTextBox.Text,
+                    Direccion = direccionTextBox.Text,
+                    Telefono = telefonoTextBox.Text
+                };
 
-            var newSupplier = new Proveedores
+                _supplierRepo.UpdateSupplier(newSupplier);
+                isEditing = false;
+                LoadSuppliers();
+                MessageBox.Show("Proveedor actualizado correctamente", "Proveedor actualizado");
+            }
+            else
             {
-                Nombre = nombreProveedorTextBox.Text,
-                Direccion = direccionTextBox.Text,
-                Telefono = telefonoTextBox.Text
-            };
+                var newSupplier = new Proveedores
+                {
+                    Nombre = nombreProveedorTextBox.Text,
+                    Direccion = direccionTextBox.Text,
+                    Telefono = telefonoTextBox.Text
+                };
 
-            _supplierRepo.CreateSupplier(newSupplier);
-            LoadSuppliers();
-            MessageBox.Show("Proveedor guardado correctamente", "Proveedor guardado");
-
+                _supplierRepo.CreateSupplier(newSupplier);
+                isEditing = false;
+                LoadSuppliers();
+                MessageBox.Show("Proveedor guardado correctamente", "Proveedor guardado");
+            }
+            CleanForm();
         }
 
         private void editarProveedorIconButton_Click(object sender, EventArgs e)
         {
-            if (ProveedorDataGridView.SelectedRows.Count == 0)
+            if (ProveedorDataGridView.SelectedRows.Count > 0)
             {
                 MessageBox.Show("Por favor, seleccione un proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            DataGridViewRow selectedRow = ProveedorDataGridView.SelectedRows[0];
-            int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+            isEditing = true;
+            int id = int.Parse(ProveedorDataGridView.CurrentRow.Cells[0].Value.ToString());
+            string nombreProveedor = ProveedorDataGridView.CurrentRow.Cells[1].Value.ToString();
+            string direccion= ProveedorDataGridView.CurrentRow.Cells[2].Value.ToString();
+            string telefono = ProveedorDataGridView.CurrentRow.Cells[3].Value.ToString();
 
-            var proveedores = new Proveedores
-            {
-                Id = id,
-                Nombre = nombreProveedorTextBox.Text,
-                Direccion = direccionTextBox.Text,
-                Telefono = telefonoTextBox.Text
-            };
-            _supplierRepo.UpdateSupplier(proveedores);
-            LoadSuppliers();
-            MessageBox.Show("Proveedor actualizado correctamente", "Proveedor actualizado");
+            IdLabel.Text = "ID:";
+            productIdLabel.Text = id.ToString();
+            nombreProveedorTextBox.Text = nombreProveedor;
+            direccionTextBox.Text = direccion;
+            telefonoTextBox.Text = telefono;
+        }
+        private void CleanForm()
+        {
+            IdLabel.Text = "";
+            productIdLabel.Text = "";
+            nombreProveedorTextBox.Text = "";
+            direccionTextBox.Text = "";
+            telefonoTextBox.Text = "";
         }
 
         private void deleteProveedorIconButton_Click(object sender, EventArgs e)
         {
-            if(ProveedorDataGridView.SelectedRows.Count == 0)
+            if (ProveedorDataGridView.SelectedRows.Count > 0)
             {
                 MessageBox.Show("Por favor, seleccione un proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            DataGridViewRow selectedRow = ProveedorDataGridView.SelectedRows[0];
-            int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+            //DataGridViewRow selectedRow = ProveedorDataGridView.SelectedRows[0];
+            int id = int.Parse(ProveedorDataGridView.CurrentRow.Cells[0].Value.ToString());
 
-            _supplierRepo.DeleteSupplier(id);
+            try
+            {
+                _supplierRepo.DeleteSupplier(id);
+                MessageBox.Show("Proveedor eliminado correctamente", "Proveedor eliminado");
+            }
+            catch
+            {
+                MessageBox.Show("Este proveedor ya tiene productos distribuidos, no puede ser eliminido", "Error");
+            }
             LoadSuppliers();
-            MessageBox.Show("Proveedor eliminado correctamente", "Proveedor eliminado");
+            //MessageBox.Show($"{id}", "Proveedor eliminado");
         }
     }
 }
