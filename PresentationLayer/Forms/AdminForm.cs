@@ -12,6 +12,7 @@ namespace PresentationLayer.Forms
 {
     public partial class AdminForm : Form
     {
+        private ProveedorRepo _proveedorRepo;
         public AdminForm()
         {
             InitializeComponent();

@@ -164,6 +164,7 @@
             deleteClientesIconButton.TabIndex = 13;
             deleteClientesIconButton.Text = "Borrar";
             deleteClientesIconButton.UseVisualStyleBackColor = false;
+            deleteClientesIconButton.Click += deleteClientesIconButton_Click;
             // 
             // editarClientesIconButton
             // 

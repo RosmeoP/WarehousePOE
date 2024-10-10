@@ -91,15 +91,56 @@ namespace PresentationLayer.Forms
                 return;
             }
             DataGridViewRow selectedRow = ClientesDataGridView.SelectedRows[0];
-            int productoId = Convert.ToInt32(selectedRow.Cells["Id"].Value); // Asegúrate de que la columna de Id se llame "Id"
-            string nombre = selectedRow.Cells["Nombre"].Value.ToString();
+            int productoId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+            string nombre = selectedRow.Cells["Nombre"].Value?.ToString() ?? string.Empty;
             decimal precio = Convert.ToDecimal(selectedRow.Cells["Precio"].Value);
             int stock = Convert.ToInt32(selectedRow.Cells["Stock"].Value);
             int categoriaId = Convert.ToInt32(selectedRow.Cells["CategoryId"].Value);
             int proveedorId = Convert.ToInt32(selectedRow.Cells["SupplierId"].Value);
 
+            nombreProductoTextBox.Text = nombre;
+            precioTextBox.Text = precio.ToString();
+            stockTextBox.Text = stock.ToString();
+            categoriaTextBox.Text = categoriaId.ToString();
+            proveedorComboBox.SelectedValue = proveedorId;
 
+            var producto = new Productos
+            {
+                Id = productoId,
+                Nombre = nombreProductoTextBox.Text,
+                Precio = Convert.ToDecimal(precioTextBox.Text),
+                Stock = Convert.ToInt32(stockTextBox.Text),
+                CategoryId = Convert.ToInt32(categoriaTextBox.Text),
+                SupplierId = Convert.ToInt32(proveedorComboBox.SelectedValue)
+            };
+
+
+            _productoService.UpdateProduct(producto);
+            LoadProductos();
         }
-    }
+        //borrar
+        private void deleteClientesIconButton_Click(object sender, EventArgs e)
+        {
+            if (ClientesDataGridView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Por favor, seleccione un producto para eliminar.");
+                return;
+            }
 
+            DataGridViewRow selectedRow = ClientesDataGridView.SelectedRows[0];
+            int productoId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+            DialogResult confirmResult = MessageBox.Show("¿Está seguro de que desea eliminar este producto?",
+                                                 "Confirmar eliminación",
+                                                 MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                _productoService.DeleteProduct(productoId);
+                LoadProductos();
+
+                MessageBox.Show("Producto eliminado correctamente");
+            }
+        }
+
+
+    }
 }
