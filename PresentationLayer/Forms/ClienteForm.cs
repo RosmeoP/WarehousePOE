@@ -66,7 +66,6 @@ namespace PresentationLayer.Forms
             if (string.IsNullOrEmpty(nombreProductoTextBox.Text) ||
                 string.IsNullOrEmpty(precioTextBox.Text) ||
                 string.IsNullOrEmpty(stockTextBox.Text) ||
-                string.IsNullOrEmpty(productIdLabel.Text) ||
                 categoriaComboBox.SelectedIndex == -1 ||
                 proveedorComboBox.SelectedIndex == -1)
             {

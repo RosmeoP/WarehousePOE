@@ -255,7 +255,7 @@
             Controls.Add(precioTextBox);
             Controls.Add(nombreProductoTextBox);
             Controls.Add(nombreProductoLabel);
-            ForeColor = Color.Wheat;
+            ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.None;
             Name = "ClienteForm";
             StartPosition = FormStartPosition.CenterScreen;
