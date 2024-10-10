@@ -41,6 +41,8 @@
             deleteClientesIconButton = new FontAwesome.Sharp.IconButton();
             editarClientesIconButton = new FontAwesome.Sharp.IconButton();
             exitMainButton = new FontAwesome.Sharp.IconButton();
+            proveedorComboBox = new ComboBox();
+            proveedorLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)ClientesDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             nombreProductoLabel.ForeColor = SystemColors.ActiveCaptionText;
             nombreProductoLabel.Location = new Point(62, 82);
             nombreProductoLabel.Name = "nombreProductoLabel";
-            nombreProductoLabel.Size = new Size(206, 22);
+            nombreProductoLabel.Size = new Size(257, 29);
             nombreProductoLabel.TabIndex = 0;
             nombreProductoLabel.Text = "Nombre del producto";
             // 
@@ -59,36 +61,37 @@
             // 
             nombreProductoTextBox.Location = new Point(62, 116);
             nombreProductoTextBox.Name = "nombreProductoTextBox";
-            nombreProductoTextBox.Size = new Size(174, 23);
+            nombreProductoTextBox.Size = new Size(174, 27);
             nombreProductoTextBox.TabIndex = 1;
             // 
             // categoriaTextBox
             // 
             categoriaTextBox.Location = new Point(336, 201);
             categoriaTextBox.Name = "categoriaTextBox";
-            categoriaTextBox.Size = new Size(156, 23);
+            categoriaTextBox.Size = new Size(156, 27);
             categoriaTextBox.TabIndex = 3;
             // 
             // precioTextBox
             // 
             precioTextBox.Location = new Point(336, 116);
             precioTextBox.Name = "precioTextBox";
-            precioTextBox.Size = new Size(156, 23);
+            precioTextBox.Size = new Size(156, 27);
             precioTextBox.TabIndex = 5;
             // 
             // stockTextBox
             // 
             stockTextBox.Location = new Point(62, 201);
             stockTextBox.Name = "stockTextBox";
-            stockTextBox.Size = new Size(174, 23);
+            stockTextBox.Size = new Size(174, 27);
             stockTextBox.TabIndex = 7;
             // 
             // ClientesDataGridView
             // 
             ClientesDataGridView.BackgroundColor = Color.White;
             ClientesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ClientesDataGridView.Location = new Point(62, 293);
+            ClientesDataGridView.Location = new Point(62, 337);
             ClientesDataGridView.Name = "ClientesDataGridView";
+            ClientesDataGridView.RowHeadersWidth = 51;
             ClientesDataGridView.Size = new Size(663, 301);
             ClientesDataGridView.TabIndex = 8;
             // 
@@ -99,7 +102,7 @@
             precioLabel.ForeColor = SystemColors.ActiveCaptionText;
             precioLabel.Location = new Point(336, 82);
             precioLabel.Name = "precioLabel";
-            precioLabel.Size = new Size(70, 22);
+            precioLabel.Size = new Size(86, 29);
             precioLabel.TabIndex = 9;
             precioLabel.Text = "Precio";
             // 
@@ -110,7 +113,7 @@
             stockLabel.ForeColor = SystemColors.ActiveCaptionText;
             stockLabel.Location = new Point(62, 162);
             stockLabel.Name = "stockLabel";
-            stockLabel.Size = new Size(63, 22);
+            stockLabel.Size = new Size(78, 29);
             stockLabel.TabIndex = 10;
             stockLabel.Text = "Stock";
             // 
@@ -121,7 +124,7 @@
             categoriaLabel.ForeColor = SystemColors.ActiveCaptionText;
             categoriaLabel.Location = new Point(336, 162);
             categoriaLabel.Name = "categoriaLabel";
-            categoriaLabel.Size = new Size(100, 22);
+            categoriaLabel.Size = new Size(123, 29);
             categoriaLabel.TabIndex = 11;
             categoriaLabel.Text = "Categoria";
             // 
@@ -142,6 +145,7 @@
             guardarClientesIconButton.TabIndex = 12;
             guardarClientesIconButton.Text = "Guardar";
             guardarClientesIconButton.UseVisualStyleBackColor = false;
+            guardarClientesIconButton.Click += guardarClientesIconButton_Click;
             // 
             // deleteClientesIconButton
             // 
@@ -179,6 +183,7 @@
             editarClientesIconButton.TabIndex = 14;
             editarClientesIconButton.Text = "Editar";
             editarClientesIconButton.UseVisualStyleBackColor = false;
+            editarClientesIconButton.Click += editarClientesIconButton_Click;
             // 
             // exitMainButton
             // 
@@ -193,12 +198,33 @@
             exitMainButton.TabIndex = 28;
             exitMainButton.UseVisualStyleBackColor = true;
             // 
+            // proveedorComboBox
+            // 
+            proveedorComboBox.FormattingEnabled = true;
+            proveedorComboBox.Location = new Point(66, 293);
+            proveedorComboBox.Name = "proveedorComboBox";
+            proveedorComboBox.Size = new Size(426, 28);
+            proveedorComboBox.TabIndex = 29;
+            // 
+            // proveedorLabel
+            // 
+            proveedorLabel.AutoSize = true;
+            proveedorLabel.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            proveedorLabel.ForeColor = SystemColors.ActiveCaptionText;
+            proveedorLabel.Location = new Point(68, 258);
+            proveedorLabel.Name = "proveedorLabel";
+            proveedorLabel.Size = new Size(126, 27);
+            proveedorLabel.TabIndex = 30;
+            proveedorLabel.Text = "Proveedor";
+            // 
             // ClienteForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.Wheat;
             CancelButton = exitMainButton;
             ClientSize = new Size(800, 650);
+            Controls.Add(proveedorLabel);
+            Controls.Add(proveedorComboBox);
             Controls.Add(exitMainButton);
             Controls.Add(editarClientesIconButton);
             Controls.Add(deleteClientesIconButton);
@@ -237,5 +263,7 @@
         private FontAwesome.Sharp.IconButton deleteClientesIconButton;
         private FontAwesome.Sharp.IconButton editarClientesIconButton;
         private FontAwesome.Sharp.IconButton exitMainButton;
+        private ComboBox proveedorComboBox;
+        private Label proveedorLabel;
     }
 }
