@@ -1,3 +1,5 @@
+USE almacenDB
+GO
 
 -- MOSTRAR TODAS LAS TABLAS
 SELECT * FROM Categorias;
@@ -16,3 +18,4 @@ SELECT
 FROM Productos p
 JOIN Categorias c ON p.IdCategoria = c.Id
 JOIN Proveedores pr ON p.IdProveedor = pr.Id;
+

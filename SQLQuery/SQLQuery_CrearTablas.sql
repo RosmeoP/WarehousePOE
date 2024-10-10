@@ -31,3 +31,4 @@ CREATE TABLE Productos (
     FOREIGN KEY (IdCategoria) REFERENCES Categorias(Id),
     FOREIGN KEY (IdProveedor) REFERENCES Proveedores(Id)
 );
+
